@@ -9,9 +9,6 @@ def fit_vectorizer(train_texts, max_features: int = 5000) -> TfidfVectorizer:
 
 
 def create_vectorizer(max_features: int = 5000) -> TfidfVectorizer:
-    """Construct an unfitted TF-IDF vectorizer. Fitting happens later,
-    inside build_combined_features(), so custom features can be combined
-    in the same fit/transform step."""
     return TfidfVectorizer(max_features=max_features, ngram_range=(1, 2))
 
 def transform_texts(vectorizer: TfidfVectorizer, texts):
